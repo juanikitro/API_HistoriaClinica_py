@@ -1,0 +1,15 @@
+version: '3'
+services:
+    api_dev:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: always
+        network_mode: host
+#        ports:
+#            - 80:80
+        env_file:
+            - .env
+        volumes:
+            - ./app/src:/code/app
+        command: uvicorn app.main:app --host 0.0.0.0 --port 80 --reload
