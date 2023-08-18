@@ -79,10 +79,8 @@ def find_mental_problems(session, pers_codigo):
     ).fetchone()
     session.commit()
 
-    # TODO: implementar types, no sabemos de donde sale
     mental_problems = {
         "value": mental_problems is not None,
-        "types": None,
     }
 
     return mental_problems
