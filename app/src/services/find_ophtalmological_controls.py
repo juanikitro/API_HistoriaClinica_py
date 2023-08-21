@@ -2,6 +2,22 @@ from sqlalchemy import text
 
 
 def find_ophtalmological_controls(session, pers_codigo):
+    """
+    The function `find_ophtalmological_controls` retrieves information about ophthalmological controls
+    for a specific patient.
+    
+    :param session: The `session` parameter is an instance of a database session. It is used to execute
+    the SQL query and commit any changes made to the database
+    :param pers_codigo: The parameter "pers_codigo" is the personal code of the patient for whom we want
+    to find ophthalmological controls
+    :return: a dictionary with the following keys and values:
+    - "value": a boolean indicating whether there are ophthalmological controls for the given person
+    code.
+    - "quantity": an integer indicating the number of ophthalmological controls for the given person
+    code.
+    - "lastTurn": a datetime object indicating the date of the last ophthalmological control.
+    - "turnCodigo": an integer indicating
+    """
     codigo_oftalmologia = 16
     
     query = text(

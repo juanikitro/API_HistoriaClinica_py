@@ -2,6 +2,20 @@ from sqlalchemy import text
 
 
 def find_substance_use(session, pers_codigo):
+    """
+    The `find_substance_use` function retrieves information about the last turn and whether a patient
+    has a substance use diagnosis based on their personal code.
+    
+    :param session: The "session" parameter is an instance of a database session. It is used to execute
+    the SQL query and commit any changes made to the database
+    :param pers_codigo: The parameter `pers_codigo` represents the personal code of a patient
+    :return: a dictionary with the following keys and values:
+    - "value": a boolean value indicating whether the patient has a substance use diagnosis (True if
+    they have, False if they don't).
+    - "lastTurn": the date of the last assigned turn for the patient with a substance use diagnosis
+    (None if there is no diagnosis).
+    - "turnCodigo": the code of the last assigned
+    """
     diag_codigos_internos = [
         "F10",
         "F11",

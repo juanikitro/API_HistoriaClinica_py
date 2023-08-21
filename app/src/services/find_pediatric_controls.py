@@ -2,6 +2,20 @@ from sqlalchemy import text
 
 
 def find_pediatric_controls(session, pers_codigo):
+    """
+    The function `find_pediatric_controls` retrieves information about pediatric controls for a given
+    patient from a database.
+    
+    :param session: The `session` parameter is an instance of a database session. It is used to execute
+    the SQL query and commit any changes made to the database
+    :param pers_codigo: The parameter `pers_codigo` is the personal code of a patient
+    :return: a dictionary with the following keys and values:
+    - "value": a boolean indicating whether there are pediatric controls for the given person code.
+    - "quantity": an integer indicating the number of pediatric controls for the given person code.
+    - "lastTurn": a datetime object indicating the date and time of the last pediatric control for the
+    given person code.
+    - "turnCodigo": an integer
+    """
     codigo_pediatria = 19
     
     query = text(

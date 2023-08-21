@@ -2,6 +2,16 @@ from sqlalchemy import text
 
 
 def find_dental_controls(session, pers_codigo):
+    """
+    The function `find_dental_controls` retrieves dental controls for a specific patient from a
+    database.
+    
+    :param session: The "session" parameter is an instance of a database session. It is used to execute
+    the SQL query and commit any changes made to the database
+    :param pers_codigo: The parameter `pers_codigo` is the personal code of the patient for whom we want
+    to find dental controls
+    :return: a dictionary with the following keys and values:
+    """
     codigo_odontologia = 15
     
     query = text(

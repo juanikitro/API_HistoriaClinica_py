@@ -10,13 +10,15 @@ from .controllers.auth import auth, verify_jwt
 app = FastAPI()
 
 
+# login
 @app.post("/v1/auth", tags=["authentication"])
 def login(credentials: Credentials):
     return auth(credentials)
 
 
+# main endpoint
 @app.get("/v1/person", tags=["person"])
-def login(request: Request, person: PersonData):
-    verify_jwt(request.headers.get("Authorization", None))
+def all_person_data(request: Request, person: PersonData):
+    verify_jwt(request.headers.get("Authorization", None)) 
 
     return find_all_person_data(person)

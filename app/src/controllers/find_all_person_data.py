@@ -20,6 +20,17 @@ from ..models.PersonData import PersonData
 
 
 def find_all_person_data(person: PersonData):
+    """
+    The function `find_all_person_data` retrieves various types of data for a given person from a
+    database and returns it in a structured format.
+    
+    :param person: The `person` parameter is an instance of the `PersonData` class. It represents a
+    person's data and contains attributes such as `document_number`, `document_type`, `gender`, and
+    `persCodigo`
+    :type person: PersonData
+    :return: a dictionary containing information about a person and various indicators related to their
+    health and medical history.
+    """
     engine = create_engine(os.getenv("DATABASE_URL"))
     session = sessionmaker(autocommit=False, autoflush=False, bind=engine)()
 

@@ -2,6 +2,17 @@ from sqlalchemy import text
 
 
 def find_pregnancy(session, pers_codigo):
+    """
+    The `find_pregnancy` function retrieves information about a patient's pregnancy status, including
+    whether they are pregnant, if they are a minor, if there are any pregnancy-related risks, the number
+    of controls, and the details of the last turn.
+    
+    :param session: The `session` parameter is an object representing the database session. It is used
+    to execute the SQL query and commit any changes made to the database
+    :param pers_codigo: The parameter `pers_codigo` is the personal code of the patient for whom you
+    want to find pregnancy information
+    :return: a dictionary with the following keys and values:
+    """
     diag_codigos_internos = [
         "O21.2",
         "P01.4",

@@ -17,6 +17,18 @@ documentTypes = {
 
 
 def find_pers_codigo(person, session):
+    """
+    The function `find_pers_codigo` retrieves the most recent `persCodigo` from the `Persona` table in
+    the `SanMiguel.dbo` database based on the provided `person` object's document number, document type,
+    and gender.
+    
+    :param person: The "person" parameter is an object that represents a person. It likely has
+    attributes such as "document_number" (the person's document number), "document_type" (the type of
+    document, such as passport or ID card), and "gender" (the person's gender)
+    :param session: The "session" parameter is an object that represents a connection to a database. It
+    is used to execute SQL queries and interact with the database
+    :return: the value of the persCodigo column from the first row of the query result.
+    """
     query = text(
         """SELECT TOP 1 persCodigo 
             FROM SanMiguel.dbo.Persona 

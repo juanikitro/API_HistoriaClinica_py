@@ -2,6 +2,20 @@ from sqlalchemy import text
 
 
 def find_health_center(session, pers_codigo):
+    """
+    The function `find_health_center` retrieves the latest health center visits for a given person code.
+    
+    :param session: The "session" parameter is an instance of a database session. It is used to execute
+    the SQL query and commit any changes made to the database
+    :param pers_codigo: The parameter "pers_codigo" is the personal code of a person. It is used in the
+    query to filter the results and find the health centers where the person has had the latest
+    appointments
+    :return: The function `find_health_center` returns a list of dictionaries. Each dictionary
+    represents a medical center and contains the following information:
+    - "name": The name of the medical center (from the column `ubicDescripcion` in the query result).
+    - "lastTurn": The date of the last turn (from the column `turnFecha` in the query result).
+    - "turnCodigo": The code of
+    """
     query = text(
         """SELECT
                 UBI.ubicDescripcion,

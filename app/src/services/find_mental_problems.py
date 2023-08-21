@@ -2,6 +2,18 @@ from sqlalchemy import text
 
 
 def find_mental_problems(session, pers_codigo):
+    """
+    The function `find_mental_problems` retrieves the latest turn code for a given patient with a
+    specific set of mental problem diagnosis codes.
+    
+    :param session: The "session" parameter is an instance of a database session. It is used to execute
+    the SQL query and commit any changes made to the database
+    :param pers_codigo: The parameter "pers_codigo" represents the personal code of a patient. It is
+    used to identify the patient for whom we want to find any mental problems
+    :return: The function `find_mental_problems` returns a dictionary with a single key-value pair. The
+    key is "value" and the value is a boolean indicating whether there are any mental problems
+    associated with the given `pers_codigo`.
+    """
     diag_codigos_internos = [
         "F00",
         "F01",
