@@ -6,6 +6,19 @@ docker-compose up -d --build
 
 ---
 
+# .env
+```
+PORT = int
+AUTH_USER = string
+AUTH_PASS = string
+TOKEN_EXPIRES = int
+ALGORITHM = string
+SECRET_KEY = string
+DATABASE_URL = string
+```
+
+---
+
 # Modificaciones
 ## Codigos CIE10
 Para modificar los codigos que referencian a cada caso de diagnostico, se deben modificar en sus respectivos arrays. Para esto se deben seguir los siguientes pasos:
