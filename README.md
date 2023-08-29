@@ -49,6 +49,7 @@ En otros casos, se buscan los turnos cuya subespecialidad este referenciando a l
     "password": "D3f4ultP4ssw0rd"
 }
 ```
+El login debe hacerse con las credenciales colocadas en las variables de entorno `AUTH_USER` y `AUTH_PASS` 
 
 ### Response example
 ```json
@@ -57,6 +58,7 @@ En otros casos, se buscan los turnos cuya subespecialidad este referenciando a l
     "token_type": "bearer"
 }
 ```
+El token entregado tiene la duracion que se coloque (en segundos) en la variable de entorno `TOKEN_EXPIRES`. Luego de pasado ese tiempo, el usuario debera relogearse
 
 ## GET /v1/person
 ### Request example
